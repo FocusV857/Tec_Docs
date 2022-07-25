@@ -203,7 +203,7 @@ c.NotebookApp.port = 7777
 
 ## 六、配置jupyter notebook补全插件
 
-jupyter notebook的便利之处在于可以分块执行代码，并且保存之前运行的结果。但本身没有自动代码补全等功能，这里介绍如何安装nbextensions插件支持补全功能。
+jupyter notebook的便利之处在于可以分块执行代码，并且保存之前运行的结果。但本身的补全功能比较麻烦，需要按tab键才会提示补全。这里介绍如何安装nbextensions插件支持**自动**补全功能。
 
 安装之前要先关闭jupyter notebook
 
@@ -222,3 +222,11 @@ pip install jupyter_nbextensions_configurator
 3.打开jupyter notebook。打开Nbextensions，勾选Hinterland即可
 
 ![image-20220713141658251](pics\image-20220713141658251.png)
+
+需要注意的是，如果Jupyter notebook不是pip安装，而是**conda**自带的话（例如环境为conda的base），则有可能需要改用conda的相关指令才能安装扩展，如下所示。
+
+```
+conda install -c conda-forge jupyter_contrib_nbextensions
+conda install -c conda-forge jupyter_nbextensions_configurator
+```
+
